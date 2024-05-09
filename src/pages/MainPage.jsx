@@ -1,12 +1,12 @@
 import Header from '../components/Header';
-import FlightData from '../api-data.json';
 import FlightsList from '../components/FlightsList';
-import SearchFlights from '../components/SearchFlights';
+import Filter from '../components/Filter';
 
 function FlightPage() {
   return (
     <div>
       <Header />
+      <Filter />
       <FlightsList />
     </div>
   );
