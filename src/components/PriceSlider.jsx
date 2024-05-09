@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 function PriceSlider({ priceRange, setPriceRange }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -9,6 +10,7 @@ function PriceSlider({ priceRange, setPriceRange }) {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <button
@@ -18,9 +20,9 @@ function PriceSlider({ priceRange, setPriceRange }) {
         Price Range
       </button>
       {isOpen && (
-        <div className='flex flex-col items-center justify-center  mt-5'>
+        <div className='flex flex-col items-center justify-center mt-5'>
           <label htmlFor='price' className='mr-3'>
-            Price: {price}
+            Price: {priceRange}
           </label>
           <input
             id='price'

@@ -7,7 +7,7 @@ function Filter() {
   const [sortBy, setSortBy] = useState('Price');
   const [isOpen, setIsOpen] = useState(false);
   const [flightsList, setFlightsList] = useState([]);
-  const [priceRange, setPriceRange] = useState([1200, 90000]); // initial price range
+  const [priceRange, setPriceRange] = useState(1200); // Initial price range
 
   useEffect(() => {
     try {
@@ -17,12 +17,10 @@ function Filter() {
     }
   }, []);
 
-  // Filter flightsList based on priceRange
   const filteredFlightsList = flightsList.filter(
-    flight => flight.farepr >= priceRange[0] && flight.farepr <= priceRange[1]
+    flight => flight.farepr >= priceRange
   );
 
-  // Sort flightsList based on sortBy
   const sortedFlightsList = [...filteredFlightsList].sort((a, b) => {
     switch (sortBy) {
       case 'Price':
@@ -54,7 +52,7 @@ function Filter() {
   const handleClear = () => {
     setSortBy('Price');
     setIsOpen(false);
-    setPriceRange([1200, 90000]);
+    setPriceRange(1200);
   };
 
   return (
@@ -77,7 +75,7 @@ function Filter() {
           )}
         </div>
         <p className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full'>
-          {flightsList.length} Flights
+          {sortedFlightsList.length} Flights
         </p>
         <button
           className='bg-[#e2e8f0] hover:bg-gray-400 text-gray-[#1e293b] font-bold py-2 px-4 rounded-full'
