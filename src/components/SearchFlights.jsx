@@ -1,5 +1,5 @@
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import flightData from '../api-data.json';
 function SearchFlights() {
   const [selectWay, setSelectWay] = useState('Oneway');
   const [passenger, setPassenger] = useState('2 Passenger');
@@ -8,12 +8,23 @@ function SearchFlights() {
   const [locationTo, setLocationTo] = useState('');
   const [departureDate, setDepartureDate] = useState('');
 
+  const flight = flightData.data.flights[0].results;
+  const flightAdept = flight.apdet;
+
   const handleSubmit = e => {
     e.preventDefault();
   };
+  console.log(flightAdept);
+  const airportList = Object.entries(flightAdept).map(([key, value]) => (
+    <option key={key} value={value.c}>
+      {value.c}
+    </option>
+  ));
+
+  console.log(airportList);
 
   return (
-    <form className='mt-5 flex flex-col items-center'>
+    <form onSubmit={handleSubmit} className='mt-5 flex flex-col items-center'>
       {/* select flight type */}
       <div className='flex justify-between w-screen md:w-1/2 mb-5'>
         <div className='flex gap-10'>
@@ -50,24 +61,33 @@ function SearchFlights() {
       </div>
 
       {/* Search Flight */}
-      <div className='flex justify-between w-screen md:w-1/2 ml-8'>
+      <div className='flex justify-between items-center w-screen md:w-1/2 ml-8'>
         <div>
-          <p className='font-extralight text-slate-500'>From</p>
-          <input
-            type='text'
-            value={locationFrom}
-            onChange={e => setLocationFrom(e.target.value)}
-            className='border-b-2 border-[#29b0b6]'
-          />
+          <label htmlFor='from' className='font-extralight text-slate-500'>
+            From
+            <input
+              list='airports'
+              type='text'
+              value={locationFrom}
+              onChange={e => setLocationFrom(e.target.value)}
+              className='border-b-2 border-[#29b0b6]'
+            />
+            <datalist id='airports'>{airportList}</datalist>
+          </label>
+          {/* <datalist id='from'>{flightAdept}</datalist> */}
         </div>
         <div>
-          <p className='font-extralight text-slate-500'>To</p>
-          <input
-            type='text'
-            value={locationTo}
-            onChange={e => setLocationTo(e.target.value)}
-            className='border-b-2 border-[#29b0b6]'
-          />
+          <label htmlFor='to' className='font-extralight text-slate-500'>
+            To
+            <input
+              list='airports'
+              type='text'
+              value={locationTo}
+              onChange={e => setLocationTo(e.target.value)}
+              className='border-b-2 border-[#29b0b6]'
+            />
+            <datalist id='airports'>{airportList}</datalist>
+          </label>
         </div>
         <div>
           <p className='font-extralight text-slate-500'>Depart</p>

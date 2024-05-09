@@ -7,7 +7,6 @@ function FlightPage() {
   return (
     <div>
       <Header />
-      <SearchFlights />
       <FlightsList />
     </div>
   );
