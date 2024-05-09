@@ -60,13 +60,17 @@ function Filter() {
       <div className='mt-5 ml-10 flex gap-20 justify-center items-center'>
         <div>
           <button
-            className='bg-[#e2e8f0] hover:bg-gray-400 text-gray-[#1e293b] font-bold py-2 px-4 rounded-full'
+            className='bg-[#e2e8f0] hover:bg-gray-400 text-gray[#1e293b] font-bold py-2 px-4 rounded-full'
             onClick={toggleDropdown}
           >
             Sort: {sortBy}
           </button>
           {isOpen && (
-            <select onChange={handleSelectChange} value={sortBy}>
+            <select
+              onChange={handleSelectChange}
+              value={sortBy}
+              className='ml-2 py-2 px-4   text-gray-800 font-bold rounded'
+            >
               <option value='Price'>Price (low to high)</option>
               <option value='Duration'>Duration (shortest first)</option>
               <option value='Depart'>Depart (earliest first)</option>

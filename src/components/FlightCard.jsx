@@ -18,7 +18,6 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
   const formatDateDuration = seconds => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
     return `${hours}h ${minutes}m `;
   };
 
@@ -34,7 +33,7 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
 
   return (
     <div className='bg-white shadow-md py-4 mt-5'>
-      <div className='flex justify-between items-center '>
+      <div className='flex justify-between items-center'>
         <div className='w-1/6 text-center'>
           <div className='flex justify-center'>
             <div className='flex gap-5 justify-center items-center'>
@@ -48,7 +47,7 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
           </div>
         </div>
 
-        <div className='flex justify-between items-center gap-10'>
+        <div className='flex justify-between items-center gap-10 w-full'>
           <div className='w-1/6 text-center'>
             <p>
               {currentFlightData &&
@@ -56,7 +55,7 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
                 currentFlightData.leg[0].dt}
             </p>
           </div>
-          <div className='w-full text-center'>
+          <div className='w-1/6 text-center'>
             <p className='font-bold text-sm'>
               {currentFlightData && currentFlightData.leg
                 ? formatDateDuration(currentFlightData.leg[0].tt)
@@ -64,16 +63,14 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
             </p>
           </div>
           <div className='w-1/6 text-center'></div>
-          <div className='w-1/6 text-center mr-20'>
+          <div className='w-1/6 text-center'>
             <p>
               {currentFlightData &&
                 currentFlightData.leg &&
                 currentFlightData.leg[0].at}
             </p>
           </div>
-        </div>
-        <div className='mr-10 flex justify-center items-center text-center gap-20'>
-          <div>
+          <div className='flex-grow text-center'>
             <p>
               ₹
               {currentFlightData &&
@@ -81,17 +78,14 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
                 currentFlightData.farepr}
             </p>
           </div>
-          <div className='flex-grow text-center '>
-            <p className='text-gray-600'>
-              {currentFlightData &&
-                currentFlightData.leg &&
-                currentFlightData.leg[0].all_ap.map((stop, index) => (
-                  <span key={stop}>
-                    {index > 0 ? '→' : ''}
-                    {stop}
-                  </span>
-                ))}
-            </p>
+          <div className=' mr-10 flex justify-center items-center text-center gap-20'>
+            <div>
+              <p className='text-gray-600'>
+                {currentFlightData &&
+                  currentFlightData.leg &&
+                  currentFlightData.leg[0].all_ap.join(' → ')}
+              </p>
+            </div>
           </div>
         </div>
       </div>
