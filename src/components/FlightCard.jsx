@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { format, fromUnixTime } from 'date-fns';
 
-const FlightInfoCard = ({ flightDetails, flightData }) => {
+const FlightCard = ({ flightDetails, flightData }) => {
   const [currentFlightData, updateFlightData] = useState({});
 
   useEffect(() => {
@@ -23,9 +22,9 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
 
   const airlineLogo = airLineName => {
     if (airLineName === 'Vistara') {
-      return 'https://cdn_live.aertrip.com/resources/assets/scss/skin/img/airline-master/UK.png'; // URL of Vistara logo
+      return 'https://cdn_live.aertrip.com/resources/assets/scss/skin/img/airline-master/UK.png';
     } else if (airLineName === 'Air India') {
-      return 'https://cdn_live.aertrip.com/resources/assets/scss/skin/img/airline-master/AI.png'; // URL of Air India logo
+      return 'https://cdn_live.aertrip.com/resources/assets/scss/skin/img/airline-master/AI.png';
     } else {
       return '';
     }
@@ -93,4 +92,4 @@ const FlightInfoCard = ({ flightDetails, flightData }) => {
   );
 };
 
-export default FlightInfoCard;
+export default FlightCard;

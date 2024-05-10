@@ -7,7 +7,7 @@ function Filter() {
   const [sortBy, setSortBy] = useState('Price');
   const [isOpen, setIsOpen] = useState(false);
   const [flightsList, setFlightsList] = useState([]);
-  const [priceRange, setPriceRange] = useState(1200); // Initial price range
+  const [priceRange, setPriceRange] = useState(1200);
 
   useEffect(() => {
     try {

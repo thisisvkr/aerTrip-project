@@ -9,8 +9,8 @@ function Header() {
   const location = useLocation();
 
   return (
-    <div>
-      <header className='sticky top-0 z-50 flex justify-around items-center bg-gradient-to-r from-[#29b0b6] to-[#0c9] text-slate-50'>
+    <div className='sticky top-0 z-1000'>
+      <header className=' flex justify-around items-center bg-gradient-to-r from-[#29b0b6] to-[#0c9] text-slate-50'>
         <Link to='/' className='Logo'>
           <img className='w-14' src={logo} alt='logo' />
         </Link>
