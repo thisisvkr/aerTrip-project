@@ -27,7 +27,7 @@ Open your web browser and go to http://localhost:3000 to view the project.
 
 ### Tradeoffs:
 
--c\Choose to use Tailwind CSS for styling to make styling easier, even though it might limit some styling options compared to traditional CSS.
+-Choose to use Tailwind CSS for styling to make styling easier, even though it might limit some styling options compared to traditional CSS.
 -I implemented basic error handling to keep things simple, knowing that more robust error handling could improve the user experience.
 -For sorting and filtering functionality, I used simple JavaScript methods instead of more advanced algorithms or libraries, which might have better performance with larger datasets.
 -I didn't use Redux for state management to avoid adding unnecessary complexity to the project, even though it might offer a more structured approach to state management.
