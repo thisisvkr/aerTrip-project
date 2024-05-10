@@ -9,11 +9,11 @@ Currently, two official plugins are available:
 
 ### Instructions to Run the Project:
 
-Clone the repository from GitHub or download the project files from the provided Google Drive directory.
-Navigate to the project directory in your terminal/command prompt.
-Install dependencies by running npm install or yarn install.
-Start the development server by running npm start or yarn start.
-Open your web browser and go to http://localhost:3000 to view the project.
+-Clone the repository from GitHub or download the project files from the provided Google Drive directory.
+-Navigate to the project directory in your terminal/command prompt.
+-Install dependencies by running npm install or yarn install.
+-Start the development server by running npm run dev or yarn start.
+-Open your web browser and go to http://localhost:3000 to view the project.
 
 ## Assumptions and Tradeoffs
 
@@ -27,7 +27,10 @@ Open your web browser and go to http://localhost:3000 to view the project.
 
 ### Tradeoffs:
 
--Choose to use Tailwind CSS for styling to make styling easier, even though it might limit some styling options compared to traditional CSS.
+-Choose to use Tailwind CSS for styling to make styling easier, evethough it might limit some styling options compared to traditional CSS.
+
 -I implemented basic error handling to keep things simple, knowing that more robust error handling could improve the user experience.
+
 -For sorting and filtering functionality, I used simple JavaScript methods instead of more advanced algorithms or libraries, which might have better performance with larger datasets.
+
 -I didn't use Redux for state management to avoid adding unnecessary complexity to the project, even though it might offer a more structured approach to state management.
