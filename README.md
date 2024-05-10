@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 -Clone the repository from GitHub or download the project files from the provided Google Drive directory.
 -Navigate to the project directory in your terminal/command prompt.
 -Install dependencies by running npm install or yarn install.
--Start the development server by running npm run dev or yarn start.
+-Start the development server by running npm run dev or yarn run dev
 -Open your web browser and go to http://localhost:3000 to view the project.
 
 ## Assumptions and Tradeoffs
