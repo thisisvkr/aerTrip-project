@@ -12,8 +12,6 @@ const FlightCard = ({ flightDetails, flightData }) => {
       ? flightData?.flights[0]?.results?.aldet[currentFlightData.leg[0].al]
       : 'Loading...';
 
-  console.log(currentFlightData);
-
   const formatDateDuration = seconds => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);

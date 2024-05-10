@@ -99,7 +99,7 @@ function SearchFlights() {
                 type='text'
                 value={locationFrom}
                 onChange={handleLocationFromChange}
-                className='border-b-2 border-[#29b0b6]'
+                className='border-b-2 border-[#29b0b6] font-bold text-slate-900'
               />
               <datalist id='airports'>{airportList}</datalist>
             </label>
@@ -118,7 +118,7 @@ function SearchFlights() {
                 type='text'
                 value={locationTo}
                 onChange={handleLocationToChange}
-                className='border-b-2 border-[#29b0b6]'
+                className='border-b-2 border-[#29b0b6] font-bold text-slate-900'
               />
               <datalist id='airports'>{airportList}</datalist>
             </label>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import flightData from '../api-data.json';
 import FlightCard from './FlightCard';
 function FlightsList({ flightsList }) {
-  console.log(flightsList);
   return (
     <div>
       {flightsList && flightsList.length > 0
